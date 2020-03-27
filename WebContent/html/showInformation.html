@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src='../js/jquery.min.js'></script>
+<script src='../js/showInformationJs.js'></script>
+<title>信息展示页</title>
+</head>
+<body>
+	<input id="queryInput" type='button' value='查询所有' onclick='queryAll()'>
+	<input id="queryInput" type='button' value='增加一个' onclick='addOne()'>
+	<input id="queryInput" type='button' value='删除一个或多个' onclick='deleteSome()'>
+	<div id='showInformation'>
+		<li id="list1">id  name</li>
+	</div>
+	
+	<div id='addOnePage' style='display:none'>
+		<input id="submitValue"type='text' value='name'/>
+		<input type="button" value='submit' onclick='submitData()'>
+	</div>
+	
+	<input id="queryInput" type='button' value='通过MVC查询所有' onclick='queryAllByMVC()'>
+</body>
+</html>

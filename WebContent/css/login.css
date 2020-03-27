@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+html{
+	height:100%;
+	width:100%;
+}
+body{
+	height:100%;
+	width:100%;
+	background-image:url(../image/background_warriors.jpg);
+	margin:0;
+}
+div{
+	text-align: center;	
+	color: #f4b93b;
+}

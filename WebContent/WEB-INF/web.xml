@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <filter>
+    <filter-name>com.blog.filter.FirstFilter</filter-name>
+    <filter-class>com.blog.filter.FirstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.blog.filter.FirstFilter</filter-name>
+    <url-pattern>/html/index.html</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>com.blog.servlet.LoginServlet</servlet-name>
+    <servlet-class>com.blog.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>com.blog.servlet.LoginServlet</servlet-name>
+    <url-pattern>/html/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>com.blog.servlet.RegisterServlet</servlet-name>
+    <servlet-class>com.blog.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>com.blog.servlet.RegisterServlet</servlet-name>
+    <url-pattern>/html/register</url-pattern>
+  </servlet-mapping>
+</web-app>

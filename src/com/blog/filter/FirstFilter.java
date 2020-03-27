@@ -1,0 +1,62 @@
+package com.blog.filter;
+ 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+ 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+public class FirstFilter implements Filter {
+ 
+    @Override
+    public void destroy() {
+ 
+    }
+ 
+    @Override
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+            throws IOException, ServletException {
+//        HttpServletRequest request = (HttpServletRequest) req;
+//        HttpServletResponse response = (HttpServletResponse) res;
+// 
+//        String ip = request.getRemoteAddr();
+//        String url = request.getRequestURL().toString();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date d = new Date();
+//        String date = sdf.format(d);
+// 
+//        System.out.printf("%s %s ทรฮสมห %s%n", date, ip, url);
+//        chain.doFilter(request, response);
+    	
+    	HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
+ 
+        String uri = request.getRequestURI();
+        if (uri.endsWith("login.html") || uri.endsWith("login")) {
+            chain.doFilter(request, response);
+            return;
+        }
+ 
+        String userName = (String) request.getSession().getAttribute("userName");
+        System.out.println(userName+"1111111111111");
+        if (null == userName) {
+            response.sendRedirect("../html/login.html");
+            return;
+        }
+ 
+        chain.doFilter(request, response);
+    }
+ 
+    @Override
+    public void init(FilterConfig arg0) throws ServletException {
+ 
+    }
+ 
+}
